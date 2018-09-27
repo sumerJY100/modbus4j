@@ -2,6 +2,10 @@ import com.serotonin.modbus4j.ip.encap.EncapMessageParser;
 import com.serotonin.modbus4j.sero.messaging.IncomingMessage;
 import com.serotonin.modbus4j.sero.util.queue.ByteQueue;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Test {
     //    public static void main(String[] args) {
     //        NumericLocator l = new NumericLocator(0, 0, 0, DataType.FOUR_BYTE_INT_UNSIGNED_SWAPPED);
@@ -14,6 +18,9 @@ public class Test {
             EncapMessageParser parser = new EncapMessageParser(false);
             IncomingMessage m = parser.parseMessage(b);
             System.out.println(m);
+
+            List<Integer> list = Arrays.asList(1,2,23,4,5,6);
+//            list.stream().collect(Collectors.groupingBy())
         }
         {
             ByteQueue b = new ByteQueue("01040404d2162ed4f1");
